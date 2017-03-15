@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style type="text/css">
+            .pass{
+                width:200px;
+                height: 20px;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+        <script>
+        	/**
+        	 * 普通js方法鼠标事件模拟密码显示隐藏
+        	 */
+           /* window.onload=function(){
+                var btn=document.getElementById("btn");
+                var pass=document.getElementById("pass")
+                btn.onmousedown=function(){
+                    pass.type="number"
+                };
+                btn.onmouseup=btn.onmouseout=function(){
+                    pass.type="password"
+                }
+            }
+            */
+           
+           /**
+            * Jquery click事件实现密码显示隐藏
+            */
+   			 $(document).ready(function(){
+	           $("#btn").click(function(){
+	           	//$("#w3s").attr("href")
+	           	if($("#pass").attr("type")=="password")
+	           		$("#pass").attr({type:"text"});
+	           	else
+	           		$("#pass").attr({type:"password"});
+	           });
+	        });
+          
+          /**
+           * JQuery鼠标事件模拟密码显示隐藏
+           */
+         /* $(function(){
+          	$("#btn").mousedown(function(){
+	           		$("#pass").attr({type:"text"});
+	           });
+	           $("#btn").mouseup(function(){
+	           		$("#pass").attr({type:"password"});
+	           });
+          });*/
+           
+           
+        </script>
+    </head>
+    <body>
+        <input type="password" name="" id="pass" value="123456" class="pass"/>
+        <input type="button" name="" id="btn" value="点击显示" />
+    </body>
+</html>
